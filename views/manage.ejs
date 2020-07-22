@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/javascripts/script.js"></script>
+  </head>
+  <body>
+    <a href="/logout" style="float:right;">Logout</a>
+    <h2> Access has been granted to your Google Spreadsheet</h2>
+    <div class="select">
+      <select id="file">
+          <option selected disabled>--- Select a spreadsheet ---</option>
+          <% files.forEach(function(file) { %>
+            <option value="<%= file.id %>"><%= file.name %></option>
+          <% }); %>
+      </select>
+      <div class="select_arrow">
+      </div>
+    </div>
+    <center>
+      <a href="#" style="display: none;" class="myButton">Deduplicate / Merge</a><br><img style="display: none;margin-top: 20px" id="loader" src="images/spin.svg">
+    </center>
+  </body>
+</html>
